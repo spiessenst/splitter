@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>SPLITTER</title>
+  </head>
+  <body>
+    <main>
+      <div class="logo"></div>
+      <div class="calculator">
+        <!-- <form id="form" class="form form--completed" spellcheck="false">-->
+        <form id="form" class="form" spellcheck="false">
+          <section class="form__left">
+            <label class="form__left__billlabel" for="bill">Bill</label>
+            <span class="form__left__dollar"></span>
+            <input
+              type="text"
+              class="form__left__billinput"
+              id="bill"
+              name="bill"
+              placeholder="0"
+            />
+            <label class="form__left__selecttip" for="tip">Select Tip %</label>
+            <section class="form__left__selecttip__buttons">
+              <button class="form__left__selecttip__button">5%</button>
+              <button class="form__left__selecttip__button">10%</button>
+              <button class="form__left__selecttip__button">15%</button>
+              <button class="form__left__selecttip__button">25%</button>
+              <button class="form__left__selecttip__button">50%</button>
+              <input
+                placeholder="Custom"
+                class="
+                  form__left__selecttip__button
+                  form__left__selecttip__button--custom
+                "
+              />
+            </section>
+
+            <label class="form__left__billlabel" for="people"
+              >Number of People</label
+            >
+
+            <!--<label
+              class="form__left__billlabel form__left__billlabel--error"
+              for="error"
+              >Can't be zero</label
+            >-->
+
+            <!-- <span class="form__left__peopleicon"></span>
+            <input
+              type="text"
+              class="form__left__billinput form__left__billinput--error"
+              id="people"
+              name="people"
+              placeholder="0"
+            /> >-->
+            <span class="form__left__peopleicon"></span>
+            <input
+              type="text"
+              s
+              class="form__left__billinput"
+              id="people"
+              name="people"
+              placeholder="0"
+            />
+          </section>
+
+          <section class="form__right">
+            <label class="form__right__label" for="amount"
+              >Tip Amount<span> / person</span></label
+            >
+            <label class="form__right__labelamounttip" for="amount">0.00</label>
+            <label class="form__right__label" for="amount"
+              >Total<span> / person</span></label
+            >
+            <label class="form__right__labelamounttip" for="amount">0.00</label>
+            <button class="form__right__button">RESET</button>
+          </section>
+        </form>
+      </div>
+    </main>
+  </body>
+</html>

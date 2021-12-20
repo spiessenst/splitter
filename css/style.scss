@@ -1,0 +1,216 @@
+@use "./base/reset";
+@use "./base/extends";
+@use "./base/variables" as *;
+@use "./base/fonts" as *;
+@use "./base/mixins" as *;
+@use "./icons/icons";
+
+body {
+  background-color: $Light-grayish-cyan1;
+}
+
+.logo {
+  padding-top: 50px;
+  padding-bottom: 50px;
+  display: flex;
+  justify-content: center;
+
+  &:before {
+    content: "\e902";
+    font-family: icons;
+    font-size: 50px;
+  }
+}
+
+.calculator {
+  width: 90%;
+  margin: 0 auto;
+  max-width: 925px;
+  padding-bottom: 50px;
+  background-color: $Light-grayish-cyan2;
+  border-radius: 25px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  @extend %placeholdertextcolor;
+}
+
+.form {
+  @include font();
+  display: flex;
+  justify-content: space-between;
+  gap: 45px;
+
+  &--completed {
+    .form__right__button {
+      background-color: #26c0ab;
+    }
+    .form__left__selecttip__button:active {
+      background-color: #26c0ab;
+    }
+  }
+
+  &__left {
+    width: 50%;
+    padding-top: 50px;
+    padding-left: 50px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+
+    &__dollar::before {
+      position: absolute;
+      content: "\e900";
+      font-family: icons;
+
+      top: 88px;
+      left: 70px;
+    }
+
+    &__peopleicon::before {
+      position: absolute;
+      content: "\e901";
+      font-family: icons;
+      bottom: 14px;
+      left: 70px;
+    }
+    &__billlabel {
+      margin-bottom: 5px;
+      &--error {
+        color: red;
+      }
+    }
+
+    &__billinput {
+      @include font($fs: 25px, $fw: 500);
+      height: 45px;
+      border-color: transparent;
+      background-color: $Light-grayish-cyan1;
+      border-radius: 5px;
+      padding-right: 20px;
+      text-align: right;
+      &--active {
+        border-color: $Bright-cyan;
+      }
+
+      &--error {
+        border-color: red;
+      }
+      &:focus {
+        border-color: $Bright-cyan;
+      }
+    }
+    &__selecttip {
+      margin-top: 50px;
+      margin-bottom: 20px;
+      &__buttons {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-bottom: 50px;
+      }
+      &__button {
+        width: 117px;
+        align-self: center;
+        border: none;
+        background-color: $Very-darkcyan;
+        border-radius: 5px;
+        padding: 10px;
+        cursor: pointer;
+        @include font($fs: 20px, $c: $Light-grayish-cyan2);
+        &:hover {
+          background-color: $Bright-cyan;
+        }
+
+        &--custom {
+          background-color: $Light-grayish-cyan1;
+          color: $Very-darkcyan;
+          height: 40px;
+          text-align: center;
+        }
+      }
+    }
+  }
+  &__right {
+    background-color: $Very-darkcyan;
+    border-radius: 25px;
+    margin-top: 50px;
+    margin-right: 30px;
+    padding-top: 60px;
+    padding-left: 40px;
+    padding-right: 40px;
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+
+    &__label {
+      flex: 150px 1 1;
+      @include font($fw: 500);
+      color: $Light-grayish-cyan2;
+      display: flex;
+      flex-direction: column;
+
+      span {
+        @include font($fs: 11px, $fw: 500, $c: $Bright-cyan);
+      }
+    }
+    &__labelamounttip {
+      @include font($fs: 45px, $fw: 700, $c: $Bright-cyan);
+      &::before {
+        content: "$";
+      }
+    }
+    &__button {
+      border: none;
+      width: 100%;
+      background-color: $Dark-grayish-cyan2;
+      padding: 10px;
+      border-radius: 5px;
+      cursor: pointer;
+      @include font($fs: 20px, $c: $Dark-grayish-cyan1);
+      margin-top: 100px;
+      &:hover {
+        background-color: $Bright-cyan;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 654px) {
+  .calculator {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 568px) {
+  .form {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+  .form__left {
+    width: 70%;
+    padding-left: 0;
+    &__dollar:before {
+      left: 30px;
+    }
+    &__peopleicon:before {
+      left: 30px;
+    }
+    &__selecttip {
+      &__button {
+        width: 100%;
+      }
+    }
+  }
+
+  .form__right {
+    width: 70%;
+    margin: 0;
+    gap: 30px;
+    &__button {
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+  }
+}
