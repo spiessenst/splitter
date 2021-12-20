@@ -267,6 +267,7 @@ body {
   color: #00494d;
   height: 45px;
   border-color: transparent;
+  border: 0;
   background-color: #c5e4e7;
   border-radius: 5px;
   padding-right: 20px;
@@ -276,10 +277,10 @@ body {
   border-color: #26c0ab;
 }
 .form__left__billinput--error {
-  border-color: red;
+  border: 2px solid red;
 }
 .form__left__billinput:focus {
-  border-color: #26c0ab;
+  outline-color: #26c0ab;
 }
 .form__left__selecttip {
   margin-top: 50px;
@@ -290,6 +291,10 @@ body {
   flex-wrap: wrap;
   gap: 10px;
   margin-bottom: 50px;
+}
+.form__left__selecttip__labels {
+  display: flex;
+  justify-content: space-between;
 }
 .form__left__selecttip__button {
   width: 117px;
@@ -306,6 +311,9 @@ body {
   color: #f4fafa;
 }
 .form__left__selecttip__button:hover {
+  background-color: #26c0ab;
+}
+.form__left__selecttip__button--active {
   background-color: #26c0ab;
 }
 .form__left__selecttip__button--custom {
@@ -403,6 +411,7 @@ body {
   .form__right {
     width: 70%;
     margin: 0;
+    margin-top: 50px;
     gap: 30px;
   }
   .form__right__button {

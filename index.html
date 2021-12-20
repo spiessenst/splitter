@@ -12,7 +12,7 @@
       <div class="logo"></div>
       <div class="calculator">
         <!-- <form id="form" class="form form--completed" spellcheck="false">-->
-        <form id="form" class="form" spellcheck="false">
+        <form id="form" class="form" spellcheck="false" autocomplete="off">
           <section class="form__left">
             <label class="form__left__billlabel" for="bill">Bill</label>
             <span class="form__left__dollar"></span>
@@ -27,7 +27,14 @@
             <section class="form__left__selecttip__buttons">
               <button class="form__left__selecttip__button">5%</button>
               <button class="form__left__selecttip__button">10%</button>
-              <button class="form__left__selecttip__button">15%</button>
+              <button
+                class="
+                  form__left__selecttip__button
+                  form__left__selecttip__button--active
+                "
+              >
+                15%
+              </button>
               <button class="form__left__selecttip__button">25%</button>
               <button class="form__left__selecttip__button">50%</button>
               <input
@@ -39,33 +46,27 @@
               />
             </section>
 
-            <label class="form__left__billlabel" for="people"
-              >Number of People</label
-            >
+            <section class="form__left__selecttip__labels">
+              <label class="form__left__billlabel" for="people"
+                >Number of People</label
+              >
+              <label
+                class="form__left__billlabel form__left__billlabel--error"
+                for="error"
+              >
+                Can't be zero
+              </label>
+            </section>
 
-            <!--<label
-              class="form__left__billlabel form__left__billlabel--error"
-              for="error"
-              >Can't be zero</label
-            >-->
-
-            <!-- <span class="form__left__peopleicon"></span>
+            <span class="form__left__peopleicon"></span>
             <input
               type="text"
               class="form__left__billinput form__left__billinput--error"
               id="people"
               name="people"
               placeholder="0"
-            /> >-->
-            <span class="form__left__peopleicon"></span>
-            <input
-              type="text"
-              s
-              class="form__left__billinput"
-              id="people"
-              name="people"
-              placeholder="0"
             />
+            <span class="form__left__peopleicon"></span>
           </section>
 
           <section class="form__right">
